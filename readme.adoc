@@ -1,0 +1,118 @@
+= VideoShop - A Salespoint example project
+:experimental:
+
+image:https://travis-ci.org/st-tu-dresden/videoshop.svg?branch=master["Build Status", link="https://travis-ci.org/st-tu-dresden/videoshop"]
+
+Purpose of this sample project is to make students familiar with basic technologies they're going to use during the Software Engineering Lab at Technical University of Dresden.
+
+## Quickstart
+
+NOTE: The Quickstart requires Java 11 and a recent Git (2.20 or newer preferred) to be available on your machine. If you miss any of those go through the steps described in <<prerequisites>>.
+Also, note that you have to run `mvnw.cmd` instead of `./mvnw` if you run Windows by accident.
+
+[source, shell]
+----
+$ git clone https://github.com/st-tu-dresden/videoshop
+$ cd videoshop
+$ ./mvnw clean package
+$ ./mvnw spring-boot:run
+----
+
+After that point your browser to `http://localhost:8080`.
+
+Note that the standard admin user is named `boss` and has the password `123`.
+
+## Prerequisites
+
+### Java 11
+
+https://adoptopenjdk.net/?variant=openjdk11&jvmVariant=hotspot[Download] the binaries, install. Make sure the console shows something like this:
+
+[source, bash]
+----
+$ java -version
+openjdk version "11.0.4" 2019-07-16
+OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.4+11)
+OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.4+11, mixed mode)
+----
+
+Make sure that Maven picks up the same JDK version:
+
+[source, bash]
+----
+$ ./mvnw --version
+Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T21:00:29+02:00)
+Maven home: /Users/JavaJoe/.m2/wrapper/dists/apache-maven-3.6.1-bin/38pn40mp89t5c94bjdbeod370m/apache-maven-3.6.1
+Java version: 11.0.4, vendor: AdoptOpenJDK, runtime: /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+Default locale: de_DE, platform encoding: UTF-8
+OS name: "mac os x", version: "10.14.6", arch: "x86_64", family: "mac"
+----
+
+### Git
+
+http://git-scm.com/download[Download] the binaries, run the installer. Verify the command line shows something like this after install:
+
+[source, bash]
+----
+$ git --version
+git version 2.23.0
+----
+
+## IDE Setup
+
+### Eclipse
+
+Grab the latest https://spring.io/tools[Spring Tool Suite] (plain Eclipse should work as well), run installer or unzip and run it.
+
+Select menu:File[Import], select menu:Maven[Existing Maven Projects], select the folder you checked the project out into and hit btn:[Finish]. This will import the project into your workspace.
+
+In the Console view you might wanna click the btn:[Open Console] button and select Maven Console to see that Maven is downloading dependencies, sources and Javadocs.
+
+### IntelliJ
+
+Grab the latest https://www.jetbrains.com/idea/download/[IntelliJ IDEA IDE] (both Community Edition and Ultimate Edition will work), install it according to the instructions on their website and run it.
+
+From the Welcome Screen, select btn:[Import Project]. Otherwise, if you've already opened another project, you'll need to select menu:File[New > Project from existing sources].
+Now, navigate to the folder you checked the project out into, select the `pom.xml` file and hit btn:[Open].
+
+In the opened wizard, additionally select the checkboxes btn:[Import Maven projects automatically], as well as the btn:[Sources] and btn:[Documentation] checkboxes next to btn:[Automically download] and hit btn:[Next].
+On the next page, do not select any profile and hit btn:[Next]. Now, ensure the Maven project is selected for import and hit btn:[Next].
+On the following page, ensure you've selected a 1.8 or higher JDK and hit btn:[Next].
+On the final page, leave the suggested project name as is and hit btn:[Finish].
+
+Now you have to wait a bit while IntelliJ and Maven work on importing the project, which includes downloading all required dependencies from the internet.
+All IDE activities are displayed in the status bar.
+
+
+## Technology stack
+
+This sample application is build on top of the following technologies:
+
+### Spring Boot
+
+Rapid application development framework based on Spring (see below).
+
+- https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle[Reference documentation]
+- https://spring.io/guides[Getting started guides]
+- https://projects.spring.io/spring-boot[Project home]
+
+### Spring 5
+
+The de-facto standard Java application framework.
+
+- https://spring.io/guides[Getting started guides]
+- https://projects.spring.io/spring-framework[Project home]
+
+### Spring Data JPA
+
+Spring module to easily build data access layers using JPA 2.1 (Java Persistence API).
+
+- https://spring.io/guides?filter=jpa[Getting started guides]
+- https://projects.spring.io/spring-data-jpa[Project home]
+
+### Thymeleaf
+
+Library to build HTML web views using natural templating.
+
+- https://spring.io/guides/gs/serving-web-content[Getting started guide]
+- https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html[Tutorial]
